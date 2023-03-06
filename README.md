@@ -1,2 +1,2 @@
 # crafting-tf
-Personal infrastructure configuration for crafting sandbox system
+Personal infrastructure configuration for [crafting sandbox system](https://crafting.dev) 
