@@ -4,6 +4,7 @@ resource "crafting_snapshot" "home" {
   type = "HOME"
   includes = [
     ".vscode-remote/extensions",
+    ".vscode-remote/data/User/extensions.json",
     "go",
     ".bashrc"
   ]
