@@ -8,7 +8,7 @@ terraform {
 
 
 provider "crafting" {
-  org = var.sandbox_system.org
+  org        = var.sandbox_system.org
   server_url = var.sandbox_system.server_url
 }
 

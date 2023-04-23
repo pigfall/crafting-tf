@@ -1,5 +1,5 @@
-resource "crafting_app" "nvimc" {
-  name = "tzz-nvimc"
+resource "crafting_template" "nvimc" {
+  name       = "tzz-nvimc"
   definition = <<-EOT
     workspaces:
     - name: nvimc
@@ -19,8 +19,8 @@ resource "crafting_app" "nvimc" {
   depends_on = ["crafting_snapshot.home"]
 }
 
-resource "crafting_app" "curdboy" {
-  name = "tzz-curdboy"
+resource "crafting_template" "curdboy" {
+  name       = "tzz-curdboy"
   definition = <<-EOT
     workspaces:
     - name: curdboy

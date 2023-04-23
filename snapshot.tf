@@ -1,7 +1,7 @@
 resource "crafting_snapshot" "home" {
-  name = "tzz-home"
-  folder  = ""
-  type = "HOME"
+  name   = "tzz-home"
+  folder = ""
+  type   = "HOME"
   includes = [
     ".vscode-remote/extensions",
     ".vscode-remote/data/User/extensions.json",
@@ -9,8 +9,8 @@ resource "crafting_snapshot" "home" {
     ".bashrc"
   ]
 
-  workspace =  "prepare-snapshot"
-  app_definition = <<-EOT
+  workspace          = "prepare-snapshot"
+  sandbox_definition = <<-EOT
   workspaces:
   - name: prepare-snapshot
     packages:
@@ -24,10 +24,10 @@ resource "crafting_snapshot" "home" {
   sudo apt update 
   sudo apt-get install psmisc
   echo 'export PATH=$PATH:$GOPATH/bin' >> /home/owner/.bashrc
-  mkdir .vscode-remote/data/User && touch .vscode-remote/data/User/extensions.json
-  /opt/sandboxd/vscode/bin/code-server-cs --install-extension golang.go
+  mkdir .vscode-remote/data/User && touch .vscode-remote/data/User/extensions.json && mkdir .vscode-remote/extensions
+  #bash -c '/opt/sandboxd/vscode/bin/code-server-cs --install-extension golang.go'
   go install golang.org/x/tools/gopls@latest
   curl -LO https://github.com/VSCodeVim/Vim/releases/download/v1.24.2/vim-1.24.2.vsix
-  /opt/sandboxd/vscode/bin/code-server-cs --install-extension vim-1.24.2.vsix
+  #/opt/sandboxd/vscode/bin/code-server-cs --install-extension vim-1.24.2.vsix
   EOT
 }

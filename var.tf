@@ -1,6 +1,6 @@
-variable "sandbox_system"{
+variable "sandbox_system" {
   type = object({
-    org = string
+    org        = string
     server_url = string
   })
 }
