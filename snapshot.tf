@@ -25,9 +25,9 @@ resource "crafting_snapshot" "home" {
   sudo apt-get install psmisc
   echo 'export PATH=$PATH:$GOPATH/bin' >> /home/owner/.bashrc
   mkdir .vscode-remote/data/User && touch .vscode-remote/data/User/extensions.json && mkdir .vscode-remote/extensions
-  #bash -c '/opt/sandboxd/vscode/bin/code-server-cs --install-extension golang.go'
+  /opt/sandboxd/vscode/bin/code-server-cs --install-extension golang.go
   go install golang.org/x/tools/gopls@latest
   curl -LO https://github.com/VSCodeVim/Vim/releases/download/v1.24.2/vim-1.24.2.vsix
-  #/opt/sandboxd/vscode/bin/code-server-cs --install-extension vim-1.24.2.vsix
+  /opt/sandboxd/vscode/bin/code-server-cs --install-extension vim-1.24.2.vsix
   EOT
 }
