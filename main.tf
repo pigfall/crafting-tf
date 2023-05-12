@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     crafting = {
-      source = "registry.terraform.io/crafting-dev/sandbox"
+      source = "registry.terraform.io/crafting-dev/crafting"
     }
   }
 }
