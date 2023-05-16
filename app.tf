@@ -39,3 +39,27 @@ resource "crafting_template" "curdboy" {
 
   depends_on = ["crafting_snapshot.home"]
 }
+
+resource "crafting_template" "xingtu" {
+  name       = "xingtu"
+  definition = <<-EOT
+    workspaces:
+    - name: xingtu
+      checkouts:
+        - path: xingtu-backend
+          repo:
+            git: git@github.com:pigfall/xingtutrip-backend.git
+          version_spec: main
+      packages:
+        - name: golang
+          version: 1.19.3
+      env:
+        - GOPATH=/home/owner/go
+    dependencies:
+      - name: db
+        service_type: mysql
+        version: "8"
+        properties:
+          root-password: tzzjkl
+  EOT
+}
